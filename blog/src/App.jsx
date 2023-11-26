@@ -1,12 +1,11 @@
 import Posts from "./components/posts";
+import Hero from "./components/hero";
 
 const App = () => {
   return (
     <>
-      <div>
-        <h1>Hello world!</h1>
-        <Posts />
-      </div>
+      <Hero />
+      <Posts />
     </>
   );
 };

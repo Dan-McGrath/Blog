@@ -1,7 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App, { loader as postLoader } from "../../App";
+import App from "../../App";
 import ErrorPage from "./ErrorPage";
-import Home from "../home/Home";
+import Home, { loader as postLoader } from "../home/Home";
+import PostDetail, { loader as postDetailLoader } from "../posts/postDetail";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -9,16 +10,16 @@ const Router = () => {
       path: "/",
       element: <App />,
       errorElement: <ErrorPage />,
-      loader: postLoader,
       children: [
         {
           index: true,
           element: <Home />,
+          loader: postLoader,
         },
         {
           path: "/:postId",
           element: <PostDetail />,
-          loader: postLoader,
+          loader: postDetailLoader,
         },
       ],
     },

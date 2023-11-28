@@ -1,11 +1,19 @@
-import Posts from "./components/posts";
-import Hero from "./components/hero";
+import { Outlet, useLoaderData } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { fetchPosts } from "./helpers/api";
+import Header from "./components/header/Header";
+
+export const loader = async () => {
+  const posts = await fetchPosts();
+  return { posts };
+};
 
 const App = () => {
+  const posts = useLoaderData();
   return (
     <>
-      <Hero />
-      <Posts />
+      <Header />
+      <Outlet />
     </>
   );
 };

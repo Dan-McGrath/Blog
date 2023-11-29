@@ -1,5 +1,7 @@
 import Comment from "./comment";
 import PropTypes from "prop-types";
+import { Wrapper } from "./commentsStyles";
+
 const Comments = ({ comments }) => {
   comments.forEach((ele) => {
     if (ele.replies) {
@@ -13,11 +15,11 @@ const Comments = ({ comments }) => {
     }
   });
   return (
-    <>
+    <Wrapper>
       {comments.map((comment) => (
         <Comment key={comment._id} comment={comment} />
       ))}
-    </>
+    </Wrapper>
   );
 };
 

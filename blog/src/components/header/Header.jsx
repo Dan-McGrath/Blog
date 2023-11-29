@@ -1,14 +1,17 @@
 import Nav from "./Nav";
+import { HeaderWrapper, ImgWrapper, Img, NavWrapper } from "./headerStyles";
 
 const Header = () => {
   return (
     <>
-      <header>
-        <div className="logo">
-          <img src="" alt="logo" />
-        </div>
-        <Nav />
-      </header>
+      <HeaderWrapper>
+        <ImgWrapper className="logo">
+          <Img src="" alt="logo" />
+        </ImgWrapper>
+        <NavWrapper>
+          <Nav />
+        </NavWrapper>
+      </HeaderWrapper>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { fetchPost } from "../../helpers/api";
+import Comments from "../comments/Comments";
 
 export const loader = async ({ params }) => {
   const post = await fetchPost(params.postId);
@@ -12,15 +13,10 @@ const PostDetail = () => {
   console.log(post);
   return (
     <>
-      <h2>{post.postInfo.title}</h2>
-      <p>{post.postInfo.username}</p>
-      <p>{post.postInfo.article}</p>
-      {post.comments.map((comment) => (
-        <div key={comment._id}>
-          <p>{comment.text}</p>
-          <p>{comment.name}</p>
-        </div>
-      ))}
+      <h2>{post.title}</h2>
+      <p>{post.user.username}</p>
+      <p>{post.article}</p>
+      <Comments comments={post.comments} />
     </>
   );
 };

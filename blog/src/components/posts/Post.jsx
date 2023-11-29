@@ -4,7 +4,7 @@ import { Wrapper, Title, Article, User } from "./postStyles";
 
 const Post = ({ postArray }) => {
   const post = postArray.posts.map((post) => (
-    <Wrapper key={post.id}>
+    <Wrapper key={post._id}>
       <Link to={`/${post._id}`}>
         <Title>{post.title}</Title>
         <Article>{post.article}</Article>
@@ -12,6 +12,7 @@ const Post = ({ postArray }) => {
       </Link>
     </Wrapper>
   ));
+  console.log(post);
   return post;
 };
 

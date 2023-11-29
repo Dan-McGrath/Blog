@@ -10,7 +10,6 @@ export const loader = async () => {
 
 const Home = () => {
   const posts = useLoaderData();
-
   return (
     <>
       <Hero />

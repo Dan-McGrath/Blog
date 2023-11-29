@@ -9,7 +9,7 @@ const Posts = ({ postArray }) => {
 };
 
 Posts.propTypes = {
-  postArray: PropTypes.array,
+  postArray: PropTypes.object,
 };
 
 export default Posts;

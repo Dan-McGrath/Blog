@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Wrapper, Title, Article, User } from "./postStyles";
 
 const Post = ({ postArray }) => {
   const post = postArray.posts.map((post) => (
-    <>
-      <div className="post" key={post.id}>
-        <Link to={`/${post._id}`}>
-          <h3 className="title">{post.title}</h3>
-          <article>{post.article}</article>
-          <p className="user">{post.user.username}</p>
-        </Link>
-      </div>
-    </>
+    <Wrapper key={post.id}>
+      <Link to={`/${post._id}`}>
+        <Title>{post.title}</Title>
+        <Article>{post.article}</Article>
+        <User>{post.user.username}</User>
+      </Link>
+    </Wrapper>
   ));
   return post;
 };

@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
+import { Wrapper, Text, Author } from "./replyStyles";
 
 const Reply = ({ reply }) => {
   console.log(reply);
   return (
-    <>
-      <p>{reply.text}</p>
-      <p>{reply.name}</p>
-    </>
+    <Wrapper>
+      <Text>{reply.text}</Text>
+      <Author>{reply.name}</Author>
+    </Wrapper>
   );
 };
 

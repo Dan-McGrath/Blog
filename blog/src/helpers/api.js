@@ -14,6 +14,5 @@ export const fetchPost = async (post) => {
   });
   const data = await response.json();
   const postInfo = data.post;
-  const comments = data.comments;
-  return { postInfo, comments };
+  return postInfo;
 };
